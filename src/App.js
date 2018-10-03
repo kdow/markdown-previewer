@@ -3,9 +3,9 @@ import './App.css';
 
 const marked = require("marked");
 const defaultText =
-`# Markdown header
+`# Enter Markdown into the Editor
 
-## Here is a subheader
+## View results in the live preview
 
 You can *emphasize* different **words**
 
@@ -21,9 +21,9 @@ function codeSample(x, y) {
   return x + y
 }\`\`\`
 
-> We can include block quotes
+> We can use block quotes
 
-And images:
+And add images:
 
 ![cat with wires](https://media.kellydownes.net/img/cat-wire.jpg)
 
@@ -41,15 +41,15 @@ class Previewer extends Component {
   render () {
     const {markdown} = this.state;
     return (
-      <div>
-        <div>
+      <div className = "flexbox">
+        <div className = "column">
           <h2>Markdown Editor</h2>
           <textarea id="editor"
             value = {markdown}
             onChange= {(event) => this.updateMarkdown(event.target.value)}>
           </textarea>
         </div>
-        <div>
+        <div className = "column">
           <h2>Live Preview</h2>
           <div id="preview" dangerouslySetInnerHTML = {{__html: marked(markdown),
             sanitize: true}} />
@@ -63,8 +63,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Markdown Previewer</h1>
-          <Previewer/>
+        <Previewer/>
       </div>
     );
   }
