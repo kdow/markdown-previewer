@@ -16,7 +16,7 @@ body {
 #editor, #preview {
   padding: 15px;
   height: 80vh;
-  width: 90%;
+  width: 85%;
 }
 
 #editor {
@@ -39,4 +39,22 @@ blockquote {
 
 img {
   max-width: 400px;
+}
+
+@media only screen and (max-width: 850px) {
+  .flexbox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column {
+    width: 95%;
+    margin: auto 5% auto 5%;
+  }
+
+  #editor, #preview {
+    padding: 15px;
+    height: 60vh;
+    width: 90%;
+  }
 }
