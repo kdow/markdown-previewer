@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import marked from 'marked';
 
-const marked = require("marked");
 const defaultText =
 `# Enter Markdown into the Editor
 
